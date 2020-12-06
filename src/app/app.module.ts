@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {EmptyRouteComponent} from "./empty-route/empty-route.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {NgZorroAntdModule} from "ng-zorro-antd";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgZorroAntdModule
   ],
   providers: [],
   bootstrap: [AppComponent]
