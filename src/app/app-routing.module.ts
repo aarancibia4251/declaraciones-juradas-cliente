@@ -1,7 +1,7 @@
 import { APP_BASE_HREF } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {EmptyRouteComponent} from "./empty-route/empty-route.component";
+import {NotFoundComponent} from '../core/presentation/shared/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -9,10 +9,11 @@ const routes: Routes = [
     loadChildren: () => import('./first-module/first-module.module').then(m => m.FirstModuleModule)
   },
   {
-    path: 'declared-jurisdictions-client/second',
-    loadChildren: () => import('./second/second.module').then(m => m.SecondModule)
+    path: '',
+    redirectTo: 'declared-jurisdictions-client/first',
+    pathMatch: 'full'
   },
-  { path: '**', component: EmptyRouteComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

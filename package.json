@@ -1,5 +1,5 @@
 {
-  "name": "declared-jurisdictions-client",
+  "name": "@xeiteam/declared-jurisdictions-client",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
