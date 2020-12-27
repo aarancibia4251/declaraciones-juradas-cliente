@@ -1,0 +1,156 @@
+$juris-red: #E63780;
+$juris-limegreen: #5BC500;
+$juris-black: #262626;
+$juris-black-black: #000000;
+$juris-black-rock: #2A2A3B;
+$juris-black-light: #424040;
+$juris-scroll: rgba(0, 0, 0, 0.5);
+$juris-blue: #125673;
+$juris-light-blue: #3CB0E1;
+$juris-purple: #9E5CA0;
+$juris-dark-gray: #747474;
+$juris-suva-gray: #919191;
+$juris-gray: #ADADAD;
+$juris-light-gray-1: #B6B7B7;
+$juris-light-silver: #D7D7D7;
+$juris-dark-orange: #EC6839;
+$juris-light-gray: #EDEDED;
+$juris-dark-gold: #F59C00;
+$juris-white-smoke: #F5F5F5;
+$juris-white: #FFFFFF;
+$juris-gray-smoke: #F6F6F6;
+$juris-light-aqua : #F5FCFF;
+$juris-skye-blue: #019DF4;
+$juris-gris: #757575;
+$juris-orange: #F28D15;
+$juris-dark-gris: #86888C;
+$juris-pink: #E63780;
+$juris-dark-red: #EC624B;
+
+/* clases genéricas para colores de texto */
+
+.color-juris-red {
+  color: $juris-red;
+}
+
+.color-juris-limegreen {
+  color: $juris-limegreen;
+}
+
+.color-juris-black {
+  color: $juris-black;
+}
+
+.color-juris-light-blue {
+  color: $juris-light-blue;
+}
+
+.color-juris-purple {
+  color: $juris-purple;
+}
+
+.color-juris-gray {
+  color: $juris-gray;
+}
+
+.color-juris-dark-gray {
+  color: $juris-dark-gray;
+}
+
+.color-juris-dark-orange {
+  color: $juris-dark-orange;
+}
+
+.color-juris-light-gray {
+  color: $juris-light-gray;
+}
+
+.color-juris-light-gray-1 {
+  color: $juris-light-gray-1;
+}
+
+.color-juris-dark-gold {
+  color: $juris-dark-gold;
+}
+
+.color-juris-white-smoke {
+  color: $juris-white-smoke;
+}
+
+.color-juris-white {
+  color: $juris-white;
+}
+
+.color-juris-light-silver {
+  color: $juris-light-silver;
+}
+
+.color-juris-light-aqua {
+  background-color: $juris-light-aqua;
+}
+
+.color-juris-pink {
+  color: $juris-pink;
+}
+
+.color-juris-dark-red {
+  color: $juris-dark-red;
+}
+
+/* clases genéricas para colores de background */
+
+.bg-juris-red {
+  background-color: $juris-red;
+}
+
+.bg-juris-limegreen {
+  background-color: $juris-limegreen;
+}
+
+.bg-juris-black {
+  background-color: $juris-black;
+}
+
+.bg-juris-blue {
+  color: $juris-blue;
+}
+
+.bg-juris-light-blue {
+  background-color: $juris-light-blue;
+}
+
+.bg-juris-purple {
+  background-color: $juris-purple;
+}
+
+.bg-juris-gray {
+  background-color: $juris-gray;
+}
+
+.bg-juris-dark-gray {
+  background-color: $juris-dark-gray;
+}
+
+.bg-juris-dark-orange {
+  background-color: $juris-dark-orange;
+}
+
+.bg-juris-light-gray {
+  background-color: $juris-light-gray;
+}
+
+.bg-juris-dark-gold {
+  background-color: $juris-dark-gold;
+}
+
+.bg-juris-white-smoke {
+  background-color: $juris-white-smoke;
+}
+
+.bg-juris-white {
+  background-color: $juris-white;
+}
+
+.bg-juris-light-aqua {
+  background-color: $juris-light-aqua;
+}

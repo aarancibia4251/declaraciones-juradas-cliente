@@ -1,0 +1,17 @@
+.home {
+  min-height: 90vh;
+  position: relative;
+  &__search {
+    width: 876px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &-dropdown {
+      width:  220px;
+    }
+  }
+}

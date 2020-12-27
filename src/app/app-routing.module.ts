@@ -2,6 +2,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {NotFoundComponent} from '../core/presentation/shared/not-found/not-found.component';
+import {HomeComponent} from '../core/presentation/home/home.component';
 
 const routes: Routes = [
   {
@@ -10,9 +11,13 @@ const routes: Routes = [
   },
   {
     path: '',
+    component: HomeComponent
+  },
+  /*{
+    path: '',
     redirectTo: 'declared-jurisdictions-client/first',
     pathMatch: 'full'
-  },
+  },*/
   { path: '**', component: NotFoundComponent },
 ];
 
