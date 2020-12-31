@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Constants} from '../../../utils/Constants';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  searchDoc = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  searchDJ(value) {
+    this.searchDoc = true;
   }
 
 }

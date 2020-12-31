@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import "src/scss/abstracts/variables";
+@import "src/scss/abstracts/mixins";
+
+*, *:before, *:after {
+  //box-sizing: border-box;
+}
+
+body {
+  background-color: $juris-light-gray;
+}
+
+.flex-wrap {
+  @include flex-wrap();
+}
+
+.flex-no-wrap {
+  @include flex-no-wrap();
+}

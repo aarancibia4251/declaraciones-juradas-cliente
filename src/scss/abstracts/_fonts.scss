@@ -1,0 +1,27 @@
+@import "mixins";
+
+// Fonts-Bold
+.xei-bold-12 {
+  @include telefonica-bold(12px);
+}
+
+.xei-bold-24 {
+  @include telefonica-bold(24px);
+}
+
+.xei-bold-24 {
+  @include telefonica-bold(30px);
+}
+
+// Fonts-Light
+.xei-light-35 {
+  @include telefonica-bold(35px);
+}
+
+.xei-light-24 {
+  @include telefonica-bold(24px);
+}
+
+.xei-light-12 {
+  @include telefonica-bold(12px);
+}

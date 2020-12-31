@@ -4,9 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {NgZorroAntdModule} from "ng-zorro-antd";
+import { IconDefinition } from '@ant-design/icons-angular';
+import { PlusCircleOutline, UserOutline } from '@ant-design/icons-angular/icons';
+import {NgZorroAntdModule, NzIconModule} from 'ng-zorro-antd';
 import {SharedModule} from '../core/presentation/shared/shared.module';
 import {HomeComponent} from '../core/presentation/home/home.component';
+const icons: IconDefinition[] = [PlusCircleOutline, UserOutline];
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import {HomeComponent} from '../core/presentation/home/home.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     NgZorroAntdModule,
-    SharedModule
+    SharedModule,
+    NzIconModule.forRoot(icons),
   ],
   providers: [],
   bootstrap: [AppComponent]

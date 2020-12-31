@@ -1,0 +1,13 @@
+<div class="searchdj">
+  <nz-select [ngModel]="'Cod. Contri'" nzSize="large" [ngClass]="'searchdj-dropdown'">
+    <nz-option *ngFor="let doc of typeDocs" [nzLabel]="doc.name" [nzValue]="doc.name"></nz-option>
+  </nz-select>
+  <nz-input-group [nzSuffix]="suffixIconSearch">
+    <input type="text" nzSize="large" nz-input
+
+           placeholder="input search text" (keyup.enter)="searchDJ()" />
+  </nz-input-group>
+  <ng-template #suffixIconSearch>
+    <i nz-icon nzType="search"></i>
+  </ng-template>
+</div>

@@ -1,0 +1,12 @@
+@import "src/scss/abstracts/variables";
+
+.searchdj {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  &-dropdown {
+    width:  220px;
+    background-color: $juris-light-blue;
+    outline: none;
+  }
+}
