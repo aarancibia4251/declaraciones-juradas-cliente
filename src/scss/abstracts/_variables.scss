@@ -10,7 +10,7 @@ $juris-light-blue: #3CB0E1;
 $juris-purple: #9E5CA0;
 $juris-dark-gray: #747474;
 $juris-suva-gray: #919191;
-$juris-gray: #ADADAD;
+$juris-gray: #666666;
 $juris-light-gray-1: #B6B7B7;
 $juris-light-silver: #D7D7D7;
 $juris-dark-orange: #EC6839;
@@ -21,7 +21,7 @@ $juris-white: #FFFFFF;
 $juris-gray-smoke: #F6F6F6;
 $juris-light-aqua : #F5FCFF;
 $juris-skye-blue: #019DF4;
-$juris-gris: #757575;
+$juris-gris: #999999; // 757575
 $juris-orange: #F28D15;
 $juris-dark-gris: #86888C;
 $juris-pink: #E63780;
@@ -38,7 +38,7 @@ $juris-dark-red: #EC624B;
 }
 
 .color-juris-black {
-  color: $juris-black;
+  color: $juris-black-black;
 }
 
 .color-juris-light-blue {
@@ -51,6 +51,10 @@ $juris-dark-red: #EC624B;
 
 .color-juris-gray {
   color: $juris-gray;
+}
+
+.color-juris-gris {
+  color: $juris-gris;
 }
 
 .color-juris-dark-gray {

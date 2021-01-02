@@ -1,5 +1,6 @@
 <div class="searchdj">
-  <nz-select [ngModel]="'Cod. Contri'" nzSize="large" [ngClass]="'searchdj-dropdown'">
+  <nz-select [ngModel]="'Cod. Contri'" nzSize="large"
+             [ngClass]="'searchdj-dropdown'">
     <nz-option *ngFor="let doc of typeDocs" [nzLabel]="doc.name" [nzValue]="doc.name"></nz-option>
   </nz-select>
   <nz-input-group [nzSuffix]="suffixIconSearch">

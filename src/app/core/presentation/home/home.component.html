@@ -1,0 +1,11 @@
+<div class="home"  *ngIf="!searchDoc">
+  <div class="home__container">
+    <app-search-dj (documentDj)="searchDJ($event)"></app-search-dj>
+    <div class="home__newDJ">
+      <div class="flex-no-wrap color-juris-light-blue xei-light-24">
+        <i nz-icon nzType="plus-circle" nzTheme="outline"></i>
+        <div>Nueva Declaración Jurada</div>
+      </div>
+    </div>
+  </div>
+</div>

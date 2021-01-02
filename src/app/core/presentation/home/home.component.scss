@@ -1,5 +1,5 @@
-@import "src/scss/abstracts/variables";
-@import "src/scss/abstracts/mixins";
+@import "../../../../scss/abstracts/variables";
+@import "../../../../scss/abstracts/mixins";
 
 .home {
   min-height: 86vh;
@@ -21,7 +21,7 @@
     transform: translate(-50%, -50%);
     &__enter {
       // width: 876px;
-      padding: 10px 0px;
+      padding: 20px 0px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -52,14 +52,25 @@
 }
 
 .info__reniec {
-
+  padding: 10px;
   &--title {
     @include flex-no-wrap();
+    align-items: center;
+    padding: 10px 0;
+
+    i {
+      display: flex;
+    }
   }
 
   &--user {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  &--newDj {
+    text-align: center;
+    padding: 30px;
   }
 }

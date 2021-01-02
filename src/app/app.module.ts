@@ -6,25 +6,30 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { IconDefinition } from '@ant-design/icons-angular';
 import { PlusCircleOutline, UserOutline } from '@ant-design/icons-angular/icons';
-import {NgZorroAntdModule, NzIconModule} from 'ng-zorro-antd';
-import {SharedModule} from '../core/presentation/shared/shared.module';
-import {HomeComponent} from '../core/presentation/home/home.component';
+import {es_ES, NZ_I18N, NzIconModule} from 'ng-zorro-antd';
+import {SharedModule} from './core/presentation/shared/shared.module';
+import {HomeComponent} from './core/presentation/home/home.component';
+import {registerLocaleData} from '@angular/common';
+import es from '@angular/common/locales/es';
+import { ConsultDjComponent } from './core/presentation/consult-dj/consult-dj.component';
 const icons: IconDefinition[] = [PlusCircleOutline, UserOutline];
+
+registerLocaleData(es);
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ConsultDjComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    NgZorroAntdModule,
     SharedModule,
     NzIconModule.forRoot(icons),
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

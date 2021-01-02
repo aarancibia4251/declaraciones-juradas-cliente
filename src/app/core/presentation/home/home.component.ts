@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Constants} from '../../../utils/Constants';
+import {Constants} from '../../../../utils/Constants';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +9,15 @@ import {Constants} from '../../../utils/Constants';
 })
 export class HomeComponent implements OnInit {
   searchDoc = false;
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
   searchDJ(value) {
-    this.searchDoc = true;
+    this.router.navigateByUrl('consulta');
   }
 
 }

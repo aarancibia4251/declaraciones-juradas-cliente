@@ -12,6 +12,16 @@
   @include font-size($fontsize);
 }
 
+@mixin xei-bold-900($fontsize) {
+  // font-family: Telefonica-Bold;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  @include font-size($fontsize);
+}
+
 @mixin telefonica-light($fontsize) {
   // font-family: Telefonica-Light;
   font-weight: bold;
