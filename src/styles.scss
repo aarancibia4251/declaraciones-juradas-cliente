@@ -20,6 +20,11 @@ body {
   @include flex-no-wrap();
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 .form-label {
   display: flex !important;
 }
@@ -38,6 +43,10 @@ body {
 
 .ml-05 {
   margin-left: 5px;
+}
+
+.mb-05 {
+  margin-bottom: 5px;
 }
 
 .ml-1 {

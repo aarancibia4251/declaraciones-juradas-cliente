@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Constants} from '../../../../utils/Constants';
+import {Constants} from '../../../utils/Constants';
 import {Router} from '@angular/router';
 
 @Component({

@@ -1,79 +1,37 @@
 <app-register-dj>
   <ng-container Content>
-      <form nz-form [ngClass]="'all-width'">
+      <form nz-form [formGroup]="taxpayerFormGroup" [ngClass]="'all-width'">
+        <button (click)="saveTaxPayer()">GUARDAR</button>
         <div class="register-dj__identification">
           <nz-divider nzText="Identificación de Contribuyentes" [ngClass]="'color-juris-black'" nzOrientation="left"></nz-divider>
           <div nz-row>
             <div nz-col [nzMd]="4" [nzXs]="24">
               <nz-form-item [ngClass]="'taxpayer__item'">
-                <label for="typeDoc" class="form-label taxpayer__item--label color-juris-gris">Tipo de documento</label>
-                <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
-                  <nz-select  id="typeDoc">
-                    <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
-                    <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
-                    <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
-                  </nz-select>
-                </nz-form-control>
-              </nz-form-item>
-            </div>
-            <div class="mr-2"></div>
-            <div nz-col [nzMd]="4" [nzXs]="24">
-              <nz-form-item [ngClass]="'taxpayer__item'">
-                <label for="numberDoc" class="form-label taxpayer__item--label color-juris-gris"># de documento</label>
-                <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
-                  <input nz-input id="numberDoc" />
-                </nz-form-control>
-              </nz-form-item>
-            </div>
-            <div class="mr-2"></div>
-            <div nz-col [nzMd]="4" [nzXs]="24">
-              <nz-form-item [ngClass]="'taxpayer__item'">
                 <label for="typePerson" class="form-label taxpayer__item--label color-juris-gris">Tipo de persona</label>
                 <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
-                  <nz-select  id="typePerson">
-                    <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
-                    <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
-                    <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+                  <nz-select formControlName="typePersonFormControl" name="typePerson" id="typePerson">
+                    <nz-option *ngFor="let typePerson of typePersons" [nzValue]="typePerson.id" [nzLabel]="typePerson.name"></nz-option>
                   </nz-select>
                 </nz-form-control>
               </nz-form-item>
             </div>
             <div class="mr-2"></div>
-            <div nz-col [nzMd]="4" [nzXs]="24">
-              <nz-form-item [ngClass]="'taxpayer__item'">
-                <label for="names" class="form-label taxpayer__item--label color-juris-gris">Nombres</label>
-                <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
-                  <input nz-input id="names" />
-                </nz-form-control>
-              </nz-form-item>
-            </div>
-            <div class="mr-2"></div>
-            <div nz-col [nzMd]="4" [nzXs]="24">
-              <nz-form-item [ngClass]="'taxpayer__item'">
-                <label for="lastname" class="form-label taxpayer__item--label color-juris-gris">Apellido paterno</label>
-                <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
-                  <input nz-input id="lastname" />
-                </nz-form-control>
-              </nz-form-item>
-            </div>
+            <ng-container [ngSwitch]="typePersonFormControl?.value">
+              <ng-container *ngSwitchCase="1">
+                <ng-container  *ngTemplateOutlet="naturalPerson"></ng-container>
+              </ng-container>
+              <ng-container *ngSwitchCase="2">
+                <ng-container  *ngTemplateOutlet="juridicPerson"></ng-container>
+              </ng-container>
+            </ng-container>
           </div>
-          <div nz-row class="mt-2">
-            <div nz-col [nzMd]="4" [nzXs]="24">
-              <nz-form-item [ngClass]="'taxpayer__item'">
-                <label for="motherLastname" class="form-label taxpayer__item--label color-juris-gris">Apellido materno</label>
-                <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
-                  <input nz-input id="motherLastname" />
-                </nz-form-control>
-              </nz-form-item>
-            </div>
-            <div class="mr-2"></div>
-            <div nz-col [nzMd]="6" [nzXs]="24">
-              <nz-form-item [ngClass]="'taxpayer__item taxpayer__item--legal'">
+          <!--<div nz-col [nzMd]="6" [nzXs]="24">
+              <nz-form-item [ngClass]="'taxpayer__item taxpayer__item&#45;&#45;legal'">
                 <nz-switch [nzSize]="'small'" id="legalRepresentative">Representante legal</nz-switch>
-                <label for="legalRepresentative" class="form-label taxpayer__item--label color-juris-gris ml-05">Representante legal</label>
+                <label for="legalRepresentative" class="form-label taxpayer__item&#45;&#45;label color-juris-gris ml-05">Representante legal</label>
               </nz-form-item>
-            </div>
-          </div>
+            </div>&ndash;&gt;
+          </div>-->
         </div>
         <div class="register-dj__representant">
           <nz-divider nzText="Representado" [ngClass]="'color-juris-black'" nzOrientation="left"></nz-divider>
@@ -135,6 +93,41 @@
       </form>
   </ng-container>
 </app-register-dj>
+
+<ng-template #naturalPerson>
+  <div [formGroup]="taxpayerFormGroup" nz-col [nzMd]="4" [nzXs]="24">
+    <app-form-input [ngClass]="'taxpayer__item'" [label]="'Tipo de documento'" name="typeDoc" formControlName="typeDocFormControl"></app-form-input>
+  </div>
+  <div class="mr-2"></div>
+  <div [formGroup]="taxpayerFormGroup" nz-col [nzMd]="4" [nzXs]="24">
+    <app-form-input [ngClass]="'taxpayer__item'" [label]="'# de documento'" name="nroDoc" formControlName="nroDocFormControl"></app-form-input>
+  </div>
+  <div class="mr-2"></div>
+  <div [formGroup]="taxpayerFormGroup" nz-col [nzMd]="4" [nzXs]="24">
+    <app-form-input [ngClass]="'taxpayer__item'" [label]="'Nombres'" name="names" formControlName="namesFormControl"></app-form-input>
+  </div>
+  <div class="mr-2"></div>
+  <div [formGroup]="taxpayerFormGroup" nz-col [nzMd]="4" [nzXs]="24">
+    <app-form-input [ngClass]="'taxpayer__item'" [label]="'Apellido paterno'" name="lastName" formControlName="lastNameFormControl"></app-form-input>
+  </div>
+  <div [formGroup]="taxpayerFormGroup" nz-col [nzMd]="4" [nzXs]="24">
+    <app-form-input [ngClass]="'taxpayer__item'" [label]="'Apellido materno'" name="motherLastname" formControlName="motherLastnameFormControl"></app-form-input>
+  </div>
+</ng-template>
+
+<ng-template #juridicPerson>
+  <div [formGroup]="taxpayerFormGroup" nz-col [nzMd]="4" [nzXs]="24">
+    <app-form-input [ngClass]="'taxpayer__item'" [label]="'Tipo de documento'" name="typeDoc" formControlName="typeDocFormControl"></app-form-input>
+  </div>
+  <div class="mr-2"></div>
+  <div [formGroup]="taxpayerFormGroup" nz-col [nzMd]="4" [nzXs]="24">
+    <app-form-input [ngClass]="'taxpayer__item'" [label]="'# de documento'" name="nroDoc" formControlName="nroDocFormControl"></app-form-input>
+  </div>
+  <div class="mr-2"></div>
+  <div [formGroup]="taxpayerFormGroup" nz-col [nzMd]="4" [nzXs]="24">
+    <app-form-input [ngClass]="'taxpayer__item'" [label]="'Razón Social'" name="names" formControlName="socialReasonFormControl"></app-form-input>
+  </div>
+</ng-template>
 
 <ng-template #withLegalRepresentative>
   <div nz-row>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Strings} from '../../../../../utils/Strings';
+import {Strings} from '../../../../utils/Strings';
 
 @Component({
   selector: 'app-register-dj',

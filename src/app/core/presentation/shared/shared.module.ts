@@ -7,9 +7,10 @@ import {NgZorroAntdModule} from 'ng-zorro-antd';
 import {NzSpaceModule} from 'ng-zorro-antd/space';
 import { RegisterDjComponent } from './register-dj/register-dj.component';
 import { StepsDjComponent } from './steps-dj/steps-dj.component';
+import { FormInputComponent } from './form-input/form-input.component';
 
 @NgModule({
-  declarations: [NotFoundComponent, SearchDjComponent, RegisterDjComponent, StepsDjComponent],
+  declarations: [NotFoundComponent, SearchDjComponent, RegisterDjComponent, StepsDjComponent, FormInputComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -23,7 +24,8 @@ import { StepsDjComponent } from './steps-dj/steps-dj.component';
     SearchDjComponent,
     NgZorroAntdModule,
     RegisterDjComponent,
-    NzSpaceModule
+    NzSpaceModule,
+    FormInputComponent
   ]
 })
 export class SharedModule { }
