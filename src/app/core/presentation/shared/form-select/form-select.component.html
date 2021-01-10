@@ -1,0 +1,8 @@
+<nz-form-item [ngClass]="'taxpayer__item'">
+  <label [for]="name" class="form-label taxpayer__item--label mb-05 color-juris-gris">{{ label }}</label>
+  <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
+    <nz-select [attr.name]="name" [id]="name" [(ngModel)]="value" (ngModelChange)="onInput($event)">
+      <nz-option *ngFor="let item of list" [nzValue]="item.id" [nzLabel]="item.name"></nz-option>
+    </nz-select>
+  </nz-form-control>
+</nz-form-item>

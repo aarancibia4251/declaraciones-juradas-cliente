@@ -1,6 +1,7 @@
 <nz-form-item [ngClass]="'flex-column'">
   <label [for]="name" class="form-label mb-05 {{ color }}">{{ label }}</label>
   <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
-    <input nz-input [id]="name" [name]="name" (input)="onInput($event.target.value)" />
+    <input (blur)="onBlur($event)" placeholder="" nz-input [(ngModel)]="value" (ngModelChange)="onInput($event)" [nzAutocomplete]="auto" />
+    <nz-autocomplete [nzDataSource]="list" nzBackfill #auto></nz-autocomplete>
   </nz-form-control>
 </nz-form-item>

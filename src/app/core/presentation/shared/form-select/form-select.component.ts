@@ -1,22 +1,22 @@
 import {Component, forwardRef, Input, OnInit} from '@angular/core';
-import {FormControl, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {NG_VALUE_ACCESSOR} from '@angular/forms';
 
 @Component({
-  selector: 'app-form-input',
-  templateUrl: './form-input.component.html',
-  styleUrls: ['./form-input.component.scss'],
+  selector: 'app-form-select',
+  templateUrl: './form-select.component.html',
+  styleUrls: ['./form-select.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => FormInputComponent),
+      useExisting: forwardRef(() => FormSelectComponent),
       multi: true
     }
   ]
 })
-export class FormInputComponent implements OnInit {
+export class FormSelectComponent implements OnInit {
   @Input() label: string;
   @Input() name: string;
-  @Input() color = 'color-juris-gris';
+  @Input() list: Array<any>;
   counter = 0;
   value: string;
   isDisabled: boolean;
@@ -64,5 +64,4 @@ export class FormInputComponent implements OnInit {
   /*
     Fin de eventos del ControlValueAccessor
   */
-
 }

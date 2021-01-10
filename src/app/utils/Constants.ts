@@ -1,18 +1,23 @@
 export class Constants {
   public static TYPES_DOCS = [
     {
+      id: 1,
       name: 'Cod. Contri'
     },
     {
+      id: 2,
       name: 'Nombre Contri'
     },
     {
+      id: 3,
       name: 'Documento'
     },
     {
+      id: 4,
       name: 'Codigo DDJJ'
     },
     {
+      id: 5,
       name: 'Dirección Predial'
     },
   ];

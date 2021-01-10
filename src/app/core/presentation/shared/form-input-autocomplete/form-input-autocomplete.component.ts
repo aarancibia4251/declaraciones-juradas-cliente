@@ -1,22 +1,26 @@
-import {Component, forwardRef, Input, OnInit} from '@angular/core';
-import {FormControl, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {Component, EventEmitter, forwardRef, Input, OnInit, Output} from '@angular/core';
+import {NG_VALUE_ACCESSOR} from '@angular/forms';
 
 @Component({
-  selector: 'app-form-input',
-  templateUrl: './form-input.component.html',
-  styleUrls: ['./form-input.component.scss'],
+  selector: 'app-form-input-autocomplete',
+  templateUrl: './form-input-autocomplete.component.html',
+  styleUrls: ['./form-input-autocomplete.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => FormInputComponent),
+      useExisting: forwardRef(() => FormInputAutocompleteComponent),
       multi: true
     }
   ]
 })
-export class FormInputComponent implements OnInit {
+export class FormInputAutocompleteComponent implements OnInit {
   @Input() label: string;
   @Input() name: string;
   @Input() color = 'color-juris-gris';
+  @Input() list: Array<any> = ['Burns Bay Road', 'Downing Street', 'Wall Street'];
+  @Output() newItem: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() onBlurEvent: EventEmitter<any> = new EventEmitter<any>();
+  newItemFlag: boolean;
   counter = 0;
   value: string;
   isDisabled: boolean;
@@ -27,7 +31,17 @@ export class FormInputComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onBlur(event) {
+    this.onBlurEvent.emit(event);
+  }
+
   onInput(value: string) {
+    this.newItemFlag = this.list.find((x: string) =>  x.toLowerCase() === value.toLowerCase());
+    if (this.newItemFlag) {
+      this.newItem.emit(false);
+    } else {
+      this.newItem.emit(true);
+    }
     this.counter = value.length;
     this.value = value;
     this.onTouch();
@@ -64,5 +78,4 @@ export class FormInputComponent implements OnInit {
   /*
     Fin de eventos del ControlValueAccessor
   */
-
 }

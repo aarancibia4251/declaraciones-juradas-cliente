@@ -8,6 +8,7 @@ $juris-scroll: rgba(0, 0, 0, 0.5);
 $juris-blue: #125673;
 $juris-light-blue: #3CB0E1;
 $juris-purple: #9E5CA0;
+$juris-purple-dark: #6C63FF;
 $juris-dark-gray: #747474;
 $juris-suva-gray: #919191;
 $juris-gray: #666666;
@@ -47,6 +48,10 @@ $juris-dark-red: #EC624B;
 
 .color-juris-purple {
   color: $juris-purple;
+}
+
+.color-juris-purple-dark {
+  color: $juris-purple-dark;
 }
 
 .color-juris-gray {
