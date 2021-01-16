@@ -1,0 +1,15 @@
+<div nz-row class="register-buttons-dj">
+  <div nz-col [nzMd]="2">
+    <button nz-button nzType="default" nzDanger (click)="cancelRegister()">
+      <i nz-icon nzType="close" nzTheme="outline"></i>
+      Cancelar
+    </button>
+  </div>
+  <div nz-col [nzMd]="20"></div>
+  <div nz-col [nzMd]="2">
+    <button nz-button (click)="nextStep()">
+      Siguiente
+      <i nz-icon nzType="right" nzTheme="outline"></i>
+    </button>
+  </div>
+</div>

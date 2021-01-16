@@ -54,7 +54,8 @@
           </ng-template>
           <div nz-row>
             <div nz-col [nzMd]="8" [nzXs]="24">
-              <app-form-input [ngClass]="'taxpayer__item'" [label]="'Ubigeo'" name="Ubigeo" formControlName="ubigeeFormControl"></app-form-input>
+              <app-form-input-autocomplete [ngClass]="'taxpayer__item'" [label]="'Ubigeo'"
+                                           name="Ubigeo" formControlName="ubigeeFormControl"></app-form-input-autocomplete>
             </div>
             <div class="mr-2"></div>
             <div nz-col [nzMd]="8" [nzXs]="24">
@@ -66,7 +67,7 @@
             <div nz-col [nzMd]="7" [nzXs]="24"></div>
             <ng-container *ngIf="numberAndLocation">
               <div nz-col class="mt-2" [nzMd]="2" [nzXs]="24">
-                <app-form-input [ngClass]="'taxpayer__item'" [label]="'Número'"
+                <app-form-input [ngClass]="'taxpayer__item'" [label]="'Número'" #numberForm
                                 [color]="showDirection ? 'color-juris-purple-dark' : null"
                                 name="numero" formControlName="numberFormControl"></app-form-input>
               </div>

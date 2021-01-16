@@ -10,6 +10,7 @@ import {StepsDjComponent} from './steps-dj/steps-dj.component';
 import {FormInputComponent} from './form-input/form-input.component';
 import {FormSelectComponent} from './form-select/form-select.component';
 import {FormInputAutocompleteComponent} from './form-input-autocomplete/form-input-autocomplete.component';
+import { RegisterButtonsDjComponent } from './register-buttons-dj/register-buttons-dj.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {FormInputAutocompleteComponent} from './form-input-autocomplete/form-inp
     StepsDjComponent,
     FormInputComponent,
     FormSelectComponent,
-    FormInputAutocompleteComponent
+    FormInputAutocompleteComponent,
+    RegisterButtonsDjComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +39,8 @@ import {FormInputAutocompleteComponent} from './form-input-autocomplete/form-inp
     NzSpaceModule,
     FormInputComponent,
     FormSelectComponent,
-    FormInputAutocompleteComponent
+    FormInputAutocompleteComponent,
+    RegisterButtonsDjComponent
   ]
 })
 export class SharedModule {

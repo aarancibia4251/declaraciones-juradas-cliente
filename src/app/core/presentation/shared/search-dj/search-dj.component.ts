@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Constants} from '../../../../utils/Constants';
+import {Constants} from '../../../../common/utils/Constants';
 
 @Component({
   selector: 'app-search-dj',

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Constants} from '../../../../utils/Constants';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Constants} from '../../../../common/utils/Constants';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {from} from 'rxjs';
 
 @Component({
   selector: 'app-taxpayer-register',
@@ -14,6 +15,7 @@ export class TaxpayerRegisterComponent implements OnInit {
   typePersonSelected = 1;
   showDirection: boolean;
   numberAndLocation: boolean;
+  @ViewChild('numberForm', { static: false}) numberFormElement;
   // end region
   // region form
   taxpayerFormGroup: FormGroup;
@@ -113,6 +115,7 @@ export class TaxpayerRegisterComponent implements OnInit {
       viaFormControl: this.viaFormControl,
       numberFormControl: this.numberFormControl,
       telephoneFormControl: this.telephoneFormControl,
+      cellphoneFormControl: this.cellphoneFormControl,
       emailFormControl: this.emailFormControl,
     });
   }

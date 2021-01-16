@@ -6,8 +6,11 @@
       <div nz-col [nzXl]="4">
         <app-steps-dj></app-steps-dj>
       </div>
-      <div nz-col [nzXl]="20" class="register-dj__content">
-        <ng-content select="[Content]"></ng-content>
+      <div nz-col [nzXl]="20">
+        <div class="register-dj__content">
+          <ng-content select="[Content]"></ng-content>
+        </div>
+        <app-register-buttons-dj></app-register-buttons-dj>
       </div>
     </div>
   </div>

@@ -40,4 +40,14 @@ export class Constants {
       name: 'Sociedad conyugal'
     },
   ];
+
+  public static REGISTER_DJ_STEPS = {
+    TAXPAYER_REGISTER: 0,
+    MOTIVE_LOCATION_ESTATE: 1,
+    TRANSFERENCE: 2,
+    CONDITION_ESTATE: 3,
+    DOCUMENTS_EXONERATION: 4,
+    SELF_ASSESSMENT: 5,
+    SUMMARY: 6
+  };
 }
