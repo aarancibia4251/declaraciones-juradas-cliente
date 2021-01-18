@@ -1,4 +1,4 @@
-<nz-form-item [ngClass]="'taxpayer__item'">
+<nz-form-item [ngClass]="'flex-column'">
   <label [for]="name" class="form-label taxpayer__item--label mb-05 color-juris-gris">{{ label }}</label>
   <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
     <nz-select [attr.name]="name" [id]="name" [(ngModel)]="value" (ngModelChange)="onInput($event)">

@@ -1,0 +1,28 @@
+<nz-divider [nzText]="directionText" [ngClass]="'color-juris-black'" nzOrientation="left"></nz-divider>
+<ng-template #directionText>
+  <nz-tag [nzColor]="'#6C63FF'" *ngIf="showDirection">Nueva</nz-tag>
+  Dirección Fiscal
+</ng-template>
+<form [formGroup]="fiscalAddressFormGroup">
+  <div nz-row>
+    <div nz-col [nzMd]="8" [nzXs]="24">
+      <app-form-input-autocomplete [ngClass]="'taxpayer__item'" [label]="'Ubigeo'"
+                                   name="Ubigeo" formControlName="ubigeeFormControl"></app-form-input-autocomplete>
+    </div>
+    <div class="mr-2"></div>
+    <div nz-col [nzMd]="8" [nzXs]="24">
+      <app-form-input-autocomplete [ngClass]="'taxpayer__item'" [label]="'Via / Lugar'"
+                                   (onBlurEvent)="showNumberAndInternLocation($event)"
+                                   [color]="showDirection ? 'color-juris-purple-dark' : null"
+                                   name="via" formControlName="viaFormControl" (newItem)="showNewDirection($event)"></app-form-input-autocomplete>
+    </div>
+    <div nz-col [nzMd]="7" [nzXs]="24"></div>
+    <ng-container *ngIf="numberAndLocation">
+      <div nz-col class="mt-2" [nzMd]="2" [nzXs]="24">
+        <app-form-input [ngClass]="'taxpayer__item'" [label]="'Número'" #numberForm
+                        [color]="showDirection ? 'color-juris-purple-dark' : null"
+                        name="numero" formControlName="numberFormControl"></app-form-input>
+      </div>
+    </ng-container>
+  </div>
+</form>

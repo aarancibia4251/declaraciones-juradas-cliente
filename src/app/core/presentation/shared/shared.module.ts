@@ -11,6 +11,7 @@ import {FormInputComponent} from './form-input/form-input.component';
 import {FormSelectComponent} from './form-select/form-select.component';
 import {FormInputAutocompleteComponent} from './form-input-autocomplete/form-input-autocomplete.component';
 import { RegisterButtonsDjComponent } from './register-buttons-dj/register-buttons-dj.component';
+import { FiscalAddressDjComponent } from './fiscal-address-dj/fiscal-address-dj.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RegisterButtonsDjComponent } from './register-buttons-dj/register-butto
     FormInputComponent,
     FormSelectComponent,
     FormInputAutocompleteComponent,
-    RegisterButtonsDjComponent
+    RegisterButtonsDjComponent,
+    FiscalAddressDjComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +42,8 @@ import { RegisterButtonsDjComponent } from './register-buttons-dj/register-butto
     FormInputComponent,
     FormSelectComponent,
     FormInputAutocompleteComponent,
-    RegisterButtonsDjComponent
+    RegisterButtonsDjComponent,
+    FiscalAddressDjComponent
   ]
 })
 export class SharedModule {

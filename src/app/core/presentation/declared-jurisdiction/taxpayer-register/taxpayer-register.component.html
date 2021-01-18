@@ -1,6 +1,7 @@
 <app-register-dj>
   <ng-container Content>
-      <form nz-form [formGroup]="taxpayerFormGroup" [ngClass]="'all-width'">
+    <button nz-button (click)="saveTaxPayer()">GUARDAR</button>
+      <form nz-form [formGroup]="taxPayerPresenterSrv.taxpayerFormGroup" [ngClass]="'all-width'">
         <div class="register-dj__identification">
           <nz-divider nzText="Identificación de Contribuyentes" [ngClass]="'color-juris-black'" nzOrientation="left"></nz-divider>
           <div nz-row>
@@ -15,65 +16,30 @@
               </nz-form-item>
             </div>
             <div class="mr-2"></div>
-            <ng-container [ngSwitch]="typePersonFormControl?.value">
+            <ng-container [ngSwitch]="taxPayerPresenterSrv.typePersonFormControl?.value">
               <ng-container *ngSwitchCase="1">
                 <ng-container  *ngTemplateOutlet="naturalPerson"></ng-container>
-                <div nz-col [nzMd]="4" [nzXs]="24">
-                  <app-form-input [ngClass]="'taxpayer__item'" [label]="'Apellido materno'" name="motherLastname" formControlName="motherLastnameFormControl"></app-form-input>
-                </div>
               </ng-container>
               <ng-container *ngSwitchCase="2">
                 <ng-container  *ngTemplateOutlet="juridicPerson"></ng-container>
               </ng-container>
               <ng-container *ngSwitchCase="3">
                 <ng-container  *ngTemplateOutlet="naturalPerson"></ng-container>
-                <div nz-col [nzMd]="4" [nzXs]="24">
-                  <app-form-input [ngClass]="'taxpayer__item'" [label]="'Apellido materno'" name="motherLastname" formControlName="motherLastnameFormControl"></app-form-input>
-                </div>
               </ng-container>
               <ng-container *ngSwitchCase="4">
                 <ng-container *ngTemplateOutlet="naturalPerson"></ng-container>
-                <div nz-col [nzMd]="4" [nzXs]="24">
-                  <app-form-input [ngClass]="'taxpayer__item'" [label]="'Apellido materno'" name="motherLastname" formControlName="motherLastnameFormControl"></app-form-input>
-                </div>
               </ng-container>
             </ng-container>
           </div>
         </div>
-        <div class="register-dj__representant" *ngIf="typePersonFormControl?.value !== 1">
-          <nz-divider [nzText]="typePersonFormControl?.value !== 4 ? 'Representante' : 'Conyugue'" [ngClass]="'color-juris-black'" nzOrientation="left"></nz-divider>
+        <div class="register-dj__representant" *ngIf="taxPayerPresenterSrv.typePersonFormControl?.value !== 1">
+          <nz-divider [nzText]="taxPayerPresenterSrv.typePersonFormControl?.value !== 4 ? 'Representante' : 'Conyugue'" [ngClass]="'color-juris-black'" nzOrientation="left"></nz-divider>
           <div nz-row>
             <ng-container *ngTemplateOutlet="legalRepresentative"></ng-container>
           </div>
         </div>
-        <div class="register-dj__fiscaladdress mt-2">
-          <nz-divider [nzText]="directionText" [ngClass]="'color-juris-black'" nzOrientation="left"></nz-divider>
-          <ng-template #directionText>
-            <nz-tag [nzColor]="'#6C63FF'" *ngIf="showDirection">Nueva</nz-tag>
-            Dirección Fiscal
-          </ng-template>
-          <div nz-row>
-            <div nz-col [nzMd]="8" [nzXs]="24">
-              <app-form-input-autocomplete [ngClass]="'taxpayer__item'" [label]="'Ubigeo'"
-                                           name="Ubigeo" formControlName="ubigeeFormControl"></app-form-input-autocomplete>
-            </div>
-            <div class="mr-2"></div>
-            <div nz-col [nzMd]="8" [nzXs]="24">
-              <app-form-input-autocomplete [ngClass]="'taxpayer__item'" [label]="'Via / Lugar'"
-                                           (onBlurEvent)="showNumberAndInternLocation($event)"
-                                           [color]="showDirection ? 'color-juris-purple-dark' : null"
-                                           name="via" formControlName="viaFormControl" (newItem)="showNewDirection($event)"></app-form-input-autocomplete>
-            </div>
-            <div nz-col [nzMd]="7" [nzXs]="24"></div>
-            <ng-container *ngIf="numberAndLocation">
-              <div nz-col class="mt-2" [nzMd]="2" [nzXs]="24">
-                <app-form-input [ngClass]="'taxpayer__item'" [label]="'Número'" #numberForm
-                                [color]="showDirection ? 'color-juris-purple-dark' : null"
-                                name="numero" formControlName="numberFormControl"></app-form-input>
-              </div>
-            </ng-container>
-          </div>
-        </div>
+        <app-fiscal-address-dj [ngClass]="'register-dj__fiscaladdress mt-2'"
+                               [fiscalAddressFormGroup]="taxPayerPresenterSrv.fiscalAddressFormGroup"></app-fiscal-address-dj>
         <div class="register-dj__communication mt-2">
           <nz-divider nzText="Comunicación" [ngClass]="'color-juris-black'" nzOrientation="left"></nz-divider>
           <div nz-row>
@@ -98,28 +64,31 @@
 </app-register-dj>
 
 <ng-template #naturalPerson>
-  <ng-container [formGroup]="taxpayerFormGroup">
-    <div nz-col [nzMd]="4" [nzXs]="24">
+  <ng-container [formGroup]="taxPayerPresenterSrv.taxpayerFormGroup">
+    <div class="mb-2" nz-col [nzMd]="4" [nzXs]="24">
       <app-form-select [ngClass]="'taxpayer__item'" [label]="'Tipo de documento'" [list]="typeDocs" name="typeDoc" formControlName="typeDocFormControl"></app-form-select>
     </div>
     <div class="mr-2"></div>
-    <div  nz-col [nzMd]="4" [nzXs]="24">
+    <div class="mb-2"  nz-col [nzMd]="4" [nzXs]="24">
       <app-form-input [ngClass]="'taxpayer__item'" [label]="'# de documento'" name="nroDoc" formControlName="nroDocFormControl"></app-form-input>
     </div>
     <div class="mr-2"></div>
-    <div nz-col [nzMd]="4" [nzXs]="24">
+    <div class="mb-2" nz-col [nzMd]="4" [nzXs]="24">
       <app-form-input [ngClass]="'taxpayer__item'" [label]="'Nombres'" name="names" formControlName="namesFormControl"></app-form-input>
     </div>
     <div class="mr-2"></div>
-    <div nz-col [nzMd]="4" [nzXs]="24">
+    <div class="mb-2" nz-col [nzMd]="4" [nzXs]="24">
       <app-form-input [ngClass]="'taxpayer__item'" [label]="'Apellido paterno'" name="lastName" formControlName="lastNameFormControl"></app-form-input>
     </div>
     <div class="mr-2"></div>
+    <div class="mb-2" nz-col [nzMd]="4" [nzXs]="24">
+      <app-form-input [ngClass]="'taxpayer__item'" [label]="'Apellido materno'" name="motherLastname" formControlName="motherLastnameFormControl"></app-form-input>
+    </div>
   </ng-container>
 </ng-template>
 
 <ng-template #juridicPerson>
-  <ng-container [formGroup]="taxpayerFormGroup">
+  <ng-container [formGroup]="taxPayerPresenterSrv.taxpayerFormGroup">
     <div nz-col [nzMd]="4" [nzXs]="24">
       <app-form-select [ngClass]="'taxpayer__item'" [label]="'Tipo de documento'" [list]="typeDocs" name="typeDoc" formControlName="typeDocFormControl"></app-form-select>
     </div>
@@ -135,7 +104,7 @@
 </ng-template>
 
 <ng-template #legalRepresentative>
-  <ng-container [formGroup]="taxpayerFormGroup">
+  <ng-container [formGroup]="taxPayerPresenterSrv.taxpayerFormGroup">
     <div nz-col [nzMd]="4" [nzXs]="24">
       <app-form-select [ngClass]="'taxpayer__item'" [label]="'Tipo de documento'" [list]="typeDocs" name="typeDoc" formControlName="typeDocRepresentativeFormControl"></app-form-select>
     </div>
