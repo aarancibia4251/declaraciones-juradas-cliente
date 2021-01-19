@@ -1,0 +1,19 @@
+<app-register-dj>
+  <ng-container Content>
+    <div class="register-dj__identification">
+      <nz-divider nzText="Identificación de la declaración" [ngClass]="'color-juris-black'" nzOrientation="left"></nz-divider>
+      <div nz-row>
+        <div nz-col [nzMd]="4" [nzXs]="24">
+          <nz-form-item [ngClass]="'taxpayer__item'">
+            <label for="typePerson" class="form-label taxpayer__item--label color-juris-gris">Tipo de persona</label>
+            <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
+              <nz-select name="typePerson" id="typePerson">
+                <nz-option *ngFor="[]" [nzValue]="" [nzLabel]=""></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+      </div>
+  </ng-container>
+</app-register-dj>

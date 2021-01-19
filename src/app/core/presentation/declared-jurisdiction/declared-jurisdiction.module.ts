@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { DeclaredJurisdictionRoutingModule } from './declared-jurisdiction-routing.module';
 import { TaxpayerRegisterComponent } from './taxpayer-register/taxpayer-register.component';
 import {SharedModule} from '../shared/shared.module';
+import { MotiveLocationStateComponent } from './motive-location-state/motive-location-state.component';
 
 
 @NgModule({
-  declarations: [TaxpayerRegisterComponent],
+  declarations: [TaxpayerRegisterComponent, MotiveLocationStateComponent],
   imports: [
     CommonModule,
     DeclaredJurisdictionRoutingModule,

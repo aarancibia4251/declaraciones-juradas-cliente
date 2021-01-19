@@ -15,7 +15,7 @@ const routes: Routes = [
     component: ConsultDjComponent
   },
   {
-    path: 'declared-jurisdictions-client',
+    path: 'declaraciones-juradas',
     // loadChildren: () => import('./core/presentation/declared-jurisdictions/declared-jurisdictions-routing.module').then(m => m.DeclaredJurisdictionsRoutingModule)
     loadChildren: () => import('./core/presentation/declared-jurisdiction/declared-jurisdiction.module').then(m => m.DeclaredJurisdictionModule)
   },

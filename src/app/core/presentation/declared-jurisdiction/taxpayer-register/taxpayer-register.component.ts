@@ -1,8 +1,9 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Constants} from '../../../../common/utils/Constants';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {from} from 'rxjs';
+import {FormBuilder} from '@angular/forms';
 import {TaxpayerRegisterPresenterService} from './taxpayer-register-presenter.service';
+import {Router} from '@angular/router';
+import {DeclaredJurisdictionController} from '../../../domain/controller/declared-jurisdiction.controller';
 
 @Component({
   selector: 'app-taxpayer-register',
@@ -21,9 +22,10 @@ export class TaxpayerRegisterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    public taxPayerPresenterSrv: TaxpayerRegisterPresenterService
+    public taxPayerPresenterSrv: TaxpayerRegisterPresenterService,
+    private router: Router,
+    private declaredJurisdictionCtrl: DeclaredJurisdictionController
   ) {
-    // this.createForms();
   }
 
   ngOnInit(): void {
@@ -39,10 +41,16 @@ export class TaxpayerRegisterComponent implements OnInit {
     });
   }
 
+  cancelRegister() {
+    this.router.navigateByUrl('consulta');
+  }
+
   saveTaxPayer() {
     console.log(this.taxPayerPresenterSrv.parentFormGroup);
     console.log(this.taxPayerPresenterSrv.fiscalAddressFormGroup);
     console.log(this.taxPayerPresenterSrv.taxpayerFormGroup);
+    this.declaredJurisdictionCtrl.nextStep();
+    this.router.navigateByUrl('declaraciones-juradas/motive-location');
   }
 
 }
