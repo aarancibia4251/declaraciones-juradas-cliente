@@ -1,0 +1,62 @@
+<app-register-dj>
+  <ng-container Content>
+    <div class="transfer">
+      <div class="transfer__documents">
+        <nz-divider nzText="Documentos de Transferencia" [ngClass]="'color-juris-black'"
+                    nzOrientation="left"></nz-divider>
+        <nz-table #basicTable [nzData]="[]" [nzNoResult]="noData">
+          <thead>
+          <tr>
+            <th>Documento</th>
+            <th>Anexo</th>
+            <th>Fecha</th>
+            <th>Tipo</th>
+            <th>Adjunto</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let data of basicTable.data">
+            <td>{{data.name}}</td>
+          </tr>
+          </tbody>
+        </nz-table>
+        <div class="transfer__documents--button mt-1">
+          <button nz-button nzType="primary"(click)="openNewDocument()">Agregar</button>
+          <nz-drawer [nzClosable]="false" [nzVisible]="visible"
+                      [nzWidth]="550"
+                     [nzMaskClosable]="false"
+                     nzPlacement="right" nzTitle="Basic Drawer" (nzOnClose)="close()">
+                     <form nz-form [ngClass]="'all-width'" [nzLayout]="'inline'">
+                      <div class="transfer__documents--register">
+                        <nz-divider nzText="Nuevo Documento" [ngClass]="'color-juris-black'" nzOrientation="left"></nz-divider>
+                        <div nz-row>
+                          <div class="mb-2" nz-col [nzMd]="6" [nzXs]="24">
+                            <app-form-select [ngClass]="'flex-column'" [label]="'Tipo'" [list]="[]" name="typeNewDoc" ></app-form-select>
+                          </div>
+                          <div class="mb-2"  nz-col [nzMd]="16" [nzXs]="24">
+                            <app-form-input [ngClass]="'flex-column'" [label]="'Título'" name="titleDoc"></app-form-input>
+                          </div>
+                          <div class="mb-2" nz-col [nzMd]="6" [nzXs]="24">
+                            <app-form-input [ngClass]="'flex-column'" [label]="'Anexo'" name="titleDoc"></app-form-input>
+                          </div>
+                          <div class="mb-2"  nz-col [nzMd]="6" [nzXs]="24">
+                            <app-form-input [ngClass]="'flex-column'" [label]="'Anexo'" name="titleDoc"></app-form-input>
+                          </div>
+                          <div class="mb-2"  nz-col [nzMd]="8" [nzXs]="24">
+                            <app-form-input [ngClass]="'flex-column'" [label]="'Entidad'" name="titleDoc"></app-form-input>
+                          </div>
+                          <div class="mb-2"  nz-col [nzMd]="4" [nzXs]="24">
+                            <button nz-button nzType="primary" [nzSize]="'large'"><i nz-icon nzType="link" nzTheme="outline"></i></button>
+                          </div>
+                            </div>
+                            </div>
+                            </form>
+          </nz-drawer>
+        </div>
+      </div>
+    </div>
+    <ng-template #noData>
+      Debe agregar al menos un registro para continuar
+    </ng-template>
+  </ng-container>
+</app-register-dj>

@@ -6,7 +6,7 @@ import {catchError, map, retry, timeout} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class ApiClientService {
+export class ApiHttpClientService {
   RETRIES = 3;
   TIMEOUT = 10;
   constructor(

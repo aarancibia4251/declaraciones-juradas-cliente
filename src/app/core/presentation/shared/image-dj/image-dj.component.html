@@ -1,0 +1,13 @@
+<div class="image-dj">
+  <div class="image-dj__options flex-no-wrap">
+    <div *ngFor="let file of files">
+      <img [src]="file.src" class="image-dj__options--list" >
+    </div>
+    <div>
+      <input type="file" (change)="handleInput($event.target.files[0])" id="generate-sar">
+      <label for="generate-sar">
+        <img [src]="'image-default.png' | assetUrl" alt="">
+      </label>
+    </div>
+  </div>
+</div>

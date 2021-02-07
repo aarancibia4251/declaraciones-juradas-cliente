@@ -5,6 +5,10 @@
   @include telefonica-bold(12px);
 }
 
+.xei-bold-16 {
+  @include telefonica-bold(16px);
+}
+
 .xei-bold-24 {
   @include telefonica-bold(24px);
 }
@@ -19,6 +23,14 @@
 
 .xei-900-bold-30 {
   @include xei-bold-900(30px);
+}
+
+.xei-900-bold-20 {
+  @include xei-bold-900(20px);
+}
+
+.xei-700-bold-20 {
+  @include xei-bold-700(20px);
 }
 
 // Fonts-Light

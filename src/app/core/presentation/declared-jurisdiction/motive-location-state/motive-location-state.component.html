@@ -1,11 +1,12 @@
 <app-register-dj>
   <ng-container Content>
     <div class="register-dj__identification">
-      <nz-divider nzText="Identificación de la declaración" [ngClass]="'color-juris-black'" nzOrientation="left"></nz-divider>
+      <nz-divider nzText="Identificación de la declaración" [ngClass]="'color-juris-black'"
+                  nzOrientation="left"></nz-divider>
       <div nz-row>
-        <div nz-col [nzMd]="4" [nzXs]="24">
+        <div nz-col [nzMd]="8" [nzXs]="24">
           <nz-form-item [ngClass]="'taxpayer__item'">
-            <label for="typePerson" class="form-label taxpayer__item--label color-juris-gris">Tipo de persona</label>
+            <label for="typePerson" class="form-label taxpayer__item--label color-juris-gris">Motivo</label>
             <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
               <nz-select name="typePerson" id="typePerson">
                 <nz-option *ngFor="[]" [nzValue]="" [nzLabel]=""></nz-option>
@@ -13,7 +14,59 @@
             </nz-form-control>
           </nz-form-item>
         </div>
+        <div class="mr-2"></div>
+        <div nz-col [nzMd]="8" [nzXs]="24">
+          <label for="typePerson" class="form-label taxpayer__item--label color-juris-gris">Concepto</label>
+          <div>
+            Transferencia de un Bien Inmueble a cambio de una prestación Monetaria.
+          </div>
+        </div>
+        <div class="mr-2"></div>
+        <div nz-col [nzMd]="6" [nzXs]="24">
+          <label for="typePerson" class="form-label taxpayer__item--label color-juris-gris">Documentos
+            requeridos</label>
+          <label nz-checkbox>Minuta</label>
+        </div>
       </div>
+    </div>
+    <div class="register-dj__location-estate">
+      <app-fiscal-address-dj [ngClass]="'register-dj__fiscaladdress mt-2'"
+                             [title]="'Ubicación del predio'"
+                             (newDirection)="getNewDirection($event)"
+                             [fiscalAddressFormGroup]="fiscalAddressFormGroup"></app-fiscal-address-dj>
+    </div>
+    <div class="register-fj__location-state--images" *ngIf="viaFormControl?.value">
+      <app-image-dj *ngIf="newDirection"></app-image-dj>
+      <div *ngIf="!newDirection" nz-row>
+        <div nz-col [nzMd]="12">
+          <div class="flex-no-wrap">
+            <i nz-icon class="xei-900-bold-30 color-juris-gris" nzType="caret-down" nzTheme="outline"></i>
+            <div class="xei-900-bold-30 color-juris-gris">PREDIOS EXISTENTES</div>
+          </div>
+          <app-existing-estate></app-existing-estate>
+        </div>
+        <div nz-col [nzMd]="12" class="flex-no-wrap" style="justify-content: space-evenly">
+          <img [src]="'image-default.png' | assetUrl" alt="">
+          <img [src]="'image-default.png' | assetUrl" alt="">
+        </div>
       </div>
+    </div>
+  </ng-container>
+  <ng-container BUTTONS>
+    <div nz-row class="register-buttons-dj">
+      <div nz-col [nzMd]="2">
+        <button nz-button nzType="default" nzDanger (click)="cancelRegister()">
+          <i nz-icon nzType="close" nzTheme="outline"></i>
+          Cancelar
+        </button>
+      </div>
+      <div nz-col [nzMd]="20"></div>
+      <div nz-col [nzMd]="2">
+        <button nz-button (click)="saveMotiveLocation()">
+          Siguiente
+          <i nz-icon nzType="right" nzTheme="outline"></i>
+        </button>
+      </div>
+    </div>
   </ng-container>
 </app-register-dj>

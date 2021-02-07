@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
@@ -10,6 +10,8 @@ export class FiscalAddressDjComponent implements OnInit {
   showDirection: boolean;
   numberAndLocation: boolean;
   @Input() fiscalAddressFormGroup: FormGroup;
+  @Input() title: string;
+  @Output() newDirection: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(
     private fb: FormBuilder
@@ -22,11 +24,13 @@ export class FiscalAddressDjComponent implements OnInit {
       this.numberAndLocation = true;
     } else {
       this.numberAndLocation = false;
+      this.showDirection = false;
     }
   }
 
   showNewDirection(value) {
     this.showDirection = value;
+    this.newDirection.emit(value);
   }
 
 }

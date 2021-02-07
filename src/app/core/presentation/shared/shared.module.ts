@@ -12,6 +12,8 @@ import {FormSelectComponent} from './form-select/form-select.component';
 import {FormInputAutocompleteComponent} from './form-input-autocomplete/form-input-autocomplete.component';
 import { RegisterButtonsDjComponent } from './register-buttons-dj/register-buttons-dj.component';
 import { FiscalAddressDjComponent } from './fiscal-address-dj/fiscal-address-dj.component';
+import { ImageDjComponent } from './image-dj/image-dj.component';
+import {AssetUrlPipe} from '../../../common/pipes/asset-url.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FiscalAddressDjComponent } from './fiscal-address-dj/fiscal-address-dj.
     FormSelectComponent,
     FormInputAutocompleteComponent,
     RegisterButtonsDjComponent,
-    FiscalAddressDjComponent
+    FiscalAddressDjComponent,
+    ImageDjComponent,
+    AssetUrlPipe
   ],
   imports: [
     CommonModule,
@@ -43,7 +47,9 @@ import { FiscalAddressDjComponent } from './fiscal-address-dj/fiscal-address-dj.
     FormSelectComponent,
     FormInputAutocompleteComponent,
     RegisterButtonsDjComponent,
-    FiscalAddressDjComponent
+    FiscalAddressDjComponent,
+    ImageDjComponent,
+    AssetUrlPipe
   ]
 })
 export class SharedModule {

@@ -5,14 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { IconDefinition } from '@ant-design/icons-angular';
-import { PlusCircleOutline, UserOutline, CloseOutline } from '@ant-design/icons-angular/icons';
+import { PlusCircleOutline, UserOutline, CloseOutline, DownloadOutline, DeleteOutline, PlusOutline, FileTwoTone, PictureTwoTone, LinkOutline } from '@ant-design/icons-angular/icons';
 import {es_ES, NZ_I18N, NzIconModule} from 'ng-zorro-antd';
 import {SharedModule} from './core/presentation/shared/shared.module';
 import {HomeComponent} from './core/presentation/home/home.component';
 import {registerLocaleData} from '@angular/common';
 import es from '@angular/common/locales/es';
 import { ConsultDjComponent } from './core/presentation/consult-dj/consult-dj.component';
-const icons: IconDefinition[] = [PlusCircleOutline, UserOutline, CloseOutline];
+import {HttpClientModule} from '@angular/common/http';
+const icons: IconDefinition[] = [
+  PlusCircleOutline, UserOutline, CloseOutline, DownloadOutline, DeleteOutline, PlusOutline, FileTwoTone, PictureTwoTone,
+  LinkOutline
+];
 
 registerLocaleData(es);
 
@@ -28,6 +32,7 @@ registerLocaleData(es);
     AppRoutingModule,
     SharedModule,
     NzIconModule.forRoot(icons),
+    HttpClientModule
   ],
   providers: [{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 <nz-divider [nzText]="directionText" [ngClass]="'color-juris-black'" nzOrientation="left"></nz-divider>
 <ng-template #directionText>
   <nz-tag [nzColor]="'#6C63FF'" *ngIf="showDirection">Nueva</nz-tag>
-  Dirección Fiscal
+  {{ title }}
 </ng-template>
 <form [formGroup]="fiscalAddressFormGroup">
   <div nz-row>

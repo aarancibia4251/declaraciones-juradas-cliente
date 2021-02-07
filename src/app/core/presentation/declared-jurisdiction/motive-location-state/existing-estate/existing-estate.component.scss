@@ -1,0 +1,12 @@
+@import "src/scss/abstracts/variables";
+
+.existing-estate {
+  background-color: $juris-light-gray;
+  border-radius: 10px;
+
+  .existing-estate__button {
+    background-color: $juris-light-blue;
+    color: $juris-white;
+    text-align: center;
+  }
+}
