@@ -1,0 +1,37 @@
+<div class="transfer__drawer">
+  <form nz-form [ngClass]="'all-width'" [nzLayout]="'inline'">
+    <div class="transfer__documents--register">
+      <nz-divider nzText="Nuevo Documento" [ngClass]="'color-juris-black'" nzOrientation="left"></nz-divider>
+      <div nz-row>
+        <div class="mb-2" nz-col [nzMd]="6" [nzXs]="24">
+          <app-form-select [ngClass]="'flex-column'" [label]="'Tipo'" [list]="[]" name="typeNewDoc" ></app-form-select>
+        </div>
+        <div class="mb-2"  nz-col [nzMd]="16" [nzXs]="24">
+          <app-form-input [ngClass]="'flex-column'" [label]="'Título'" name="titleDoc"></app-form-input>
+        </div>
+        <div class="mb-2" nz-col [nzMd]="6" [nzXs]="24">
+          <app-form-input [ngClass]="'flex-column'" [label]="'Anexo'" name="titleDoc"></app-form-input>
+        </div>
+        <div class="mb-2"  nz-col [nzMd]="6" [nzXs]="24">
+          <app-form-input [ngClass]="'flex-column'" [label]="'Anexo'" name="titleDoc"></app-form-input>
+        </div>
+        <div class="mb-2"  nz-col [nzMd]="8" [nzXs]="24">
+          <app-form-input [ngClass]="'flex-column'" [label]="'Entidad'" name="titleDoc"></app-form-input>
+        </div>
+        <div class="mb-2 transfer__documents--register-file"  nz-col [nzMd]="4" [nzXs]="24">
+          <button nz-button nzType="primary" [nzSize]="'large'"><i nz-icon nzType="link" nzTheme="outline"></i></button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="flex-no-wrap transfer__drawer--button all-width">
+    <button nz-button nzType="default" (click)="close()" nzDanger>
+      <i nz-icon nzType="close" nzTheme="outline"></i>
+      Luego
+    </button>
+    <button nz-button (click)="confirm()">
+      Listo
+      <i nz-icon nzType="right" nzTheme="outline"></i>
+    </button>
+  </div>
+</div>

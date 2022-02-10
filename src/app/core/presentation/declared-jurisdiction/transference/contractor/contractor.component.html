@@ -1,0 +1,37 @@
+<div class="transfer__drawer">
+    <div class="transfer__contractor--register">
+      <nz-divider nzText="Nuevo Contratante" [ngClass]="'color-juris-black'" nzOrientation="left"></nz-divider>
+      <form nz-form [ngClass]="'all-width'" [nzLayout]="'inline'">
+      <div nz-row>
+        <div class="mb-2" nz-col [nzMd]="6" [nzXs]="24">
+          <app-form-select [ngClass]="'flex-column'" [label]="'Tipo de documento'" [list]="[]" name="typeDocContractor" ></app-form-select>
+        </div>
+        <div class="mb-2"  nz-col [nzMd]="16" [nzXs]="24">
+          <app-form-input [ngClass]="'flex-column'" [label]="'# de documento'" name="nroDoc"></app-form-input>
+        </div>
+        <div class="mb-2" nz-col [nzMd]="6" [nzXs]="24">
+          <app-form-select [ngClass]="'flex-column'" [label]="'Tipo de persona'" [list]="[]" name="typePersonContractor" ></app-form-select>
+        </div>
+      </div>
+      </form>
+    </div>
+  <div class="transfer__contractor--register">
+    <nz-divider nzText="Dirección Fiscal" [ngClass]="'color-juris-black'" nzOrientation="left"></nz-divider>
+    <form nz-form [ngClass]="'all-width'" [nzLayout]="'inline'">
+    </form>
+  </div>
+  <div class="flex-no-wrap transfer__drawer--button all-width">
+    <div>
+      <button (click)="close()" nz-button nzType="default" nzDanger>
+        <i nz-icon nzType="close" nzTheme="outline"></i>
+        Luego
+      </button>
+    </div>
+    <div>
+      <button (click)="confirm()" nz-button>
+        Listo
+        <i nz-icon nzType="right" nzTheme="outline"></i>
+      </button>
+    </div>
+  </div>
+</div>

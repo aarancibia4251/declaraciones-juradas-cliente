@@ -13,6 +13,8 @@ import {registerLocaleData} from '@angular/common';
 import es from '@angular/common/locales/es';
 import { ConsultDjComponent } from './core/presentation/consult-dj/consult-dj.component';
 import {HttpClientModule} from '@angular/common/http';
+import {ParcelModule} from 'single-spa-angular/parcel';
+import { PruebaComponent } from './core/presentation/prueba/prueba.component';
 const icons: IconDefinition[] = [
   PlusCircleOutline, UserOutline, CloseOutline, DownloadOutline, DeleteOutline, PlusOutline, FileTwoTone, PictureTwoTone,
   LinkOutline
@@ -25,6 +27,7 @@ registerLocaleData(es);
     AppComponent,
     HomeComponent,
     ConsultDjComponent,
+    PruebaComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ registerLocaleData(es);
     AppRoutingModule,
     SharedModule,
     NzIconModule.forRoot(icons),
-    HttpClientModule
+    HttpClientModule,
+    ParcelModule
   ],
   providers: [{ provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent]
